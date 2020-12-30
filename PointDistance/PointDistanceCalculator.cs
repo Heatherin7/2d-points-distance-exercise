@@ -9,7 +9,13 @@ namespace PointDistance
 		/// </summary>
 		public double GetDistance(Point a, Point b)
 		{
-			throw new NotImplementedException();
+			var deltaX = b.X - a.X;
+			var deltaXSquared = Math.Pow(deltaX, 2);
+			var deltaY = b.Y - a.Y;
+			var deltaYSquared = Math.Pow(deltaY, 2);
+			var deltaSum = deltaXSquared + deltaYSquared;
+			var distance = Math.Sqrt(deltaSum);
+			return Math.Round(distance, 3);
 		}
 	}
 }
